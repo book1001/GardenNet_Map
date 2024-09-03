@@ -1,1 +1,44 @@
-ha
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Gardeners' Map</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- <meta http-equiv="Content-type" content="text/html;charset=UTF-8"> -->
+    <!-- <link rel="shortcut icon" href="favicon.png"> -->
+
+    <!-- css -->
+    <!-- <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index_media.css"> -->
+
+    <!-- script: index_ie.js -->
+    <script type="text/javascript" src="index_ie.js"></script>
+  </head>
+
+  <body>
+    <style>
+      ::-webkit-scrollbar { 
+        width: 0;
+        height: 0;
+      }
+
+      .iframe-full {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height:100%;
+        height: calc(100% + 50px);
+        border: none;
+      }
+
+      iframe::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+    </style>
+
+    <iframe class="iframe-full" src="https://propitious-areas-046221.framer.app"></iframe>
+  </body>
+</html>
