@@ -1,0 +1,237 @@
+/* Global font settings */
+* {
+    font-family: "Courier Prime", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1vw; /* Scales font size based on viewport width */
+}
+
+/* Body background */
+body {
+    background: url('src/bgv4.png') center/cover no-repeat;
+}
+
+/* Page wrapper styling */
+#page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 97vh;
+    margin: 0;
+    background: url('src/bgv5.png') center/cover no-repeat;
+    background-attachment: fixed;
+}
+
+/* Main button styling */
+#mainButton {
+    display: none;
+    padding: 0.5vw 10vw; /* Scales padding horizontally */
+    font-size: 1.5vw; /* Scales font size */
+    cursor: pointer;
+    background-color: white;
+    color: #28a745;
+    border: none;
+    border-radius: 0.5vw;
+    position: fixed;
+    top: 13.15%;
+    left: 53%;
+    transform: translateX(-50%);
+    z-index: 10;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+#mainButton:hover {
+    background-color: hotpink;
+}
+
+/* Button container styling for additional buttons */
+#buttonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 10vw;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+#buttonContainer.show {
+    opacity: 1;
+    max-height: 100vh;
+}
+
+/* Additional button styling */
+.additional-btn {
+    padding: 0.7vw 1.5vw; /* Scales padding */
+    font-size: 1vw; /* Scales font size */
+    cursor: pointer;
+    background-color: white;
+    color: deeppink;
+    border: none;
+    border-radius: 0.5vw;
+    transition: background-color 0.3s;
+}
+
+.additional-btn:hover {
+    background-color: #218838;
+}
+
+/* Modal styling for side-by-side layout */
+.modal {
+    display: none;
+    position: fixed;
+    width: 40vw;
+    height: 60vh;
+    background-color: transparent;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 1vw;
+}
+
+/* Positioning each modal */
+#imageModal1 {
+    left: 10vw; /* Positions Modal 1 */
+    z-index: 101;
+}
+
+#imageModal2 {
+    right: 20vw; /* Positions Modal 2 */
+    z-index: 100;
+}
+
+/* Show modals */
+.modal.show {
+    display: flex;
+}
+
+/* Center images inside modals */
+.modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal image styling */
+#modalImage2{
+    max-height: 70vh;
+}
+
+#modalImage1 {
+    max-height: 60vh;
+    object-fit: contain;
+}
+
+/* Close button styling */
+#closeModal2 {
+    position: fixed; /* Keep it fixed relative to the viewport */
+    top: -4vh; /* Adjust this value to move it further up */
+    right: -8vw; /* Adjust this value to move it further right */
+    font-size: 1.5vw;
+    color: deeppink;
+    cursor: pointer;
+    width: 1.5vw;
+    height: 1.5vw;
+    background-color: #d0e9d5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.2vw solid;
+    border-color: white deeppink deeppink white;
+}
+
+#closeModal1 {
+    position: absolute;
+    top: 2vw;
+    right: 1.3vw;
+    font-size: 1.5vw; /* Scales font size */
+    color: deeppink;
+    cursor: pointer;
+    width: 1.5vw;
+    height: 1.5vw;
+    background-color: #d0e9d5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.2vw solid;
+    border-color: white deeppink deeppink white;
+}
+
+.close:hover {
+    background-color: white;
+    color: #28a745;
+    transform: scale(1.1);
+}
+
+/* Main button styling */
+#okButton {
+    position: absolute;
+    top: 10.8vw;
+    right: 28.9vw;
+    font-size: 1.5vw; /* Scales font size */
+    color: #28a745;
+    cursor: pointer;
+    width: 1.5vw;
+    height: 1.5vw;
+    background-color: #f7cedf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.2vw solid;
+    border-color: white #28a745 #28a745 white;
+}
+
+#homeButton {
+    display: none;
+    position: absolute;
+    top: 3.8vw;
+    right: 17.5vw;
+    font-size: 2vw; /* Scales font size */
+    color: deeppink;
+    cursor: pointer;
+    width: 2vw;
+    height: 2vw;
+    background-color: #d0e9d5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.2vw solid;
+    border-color: white #28a745 #28a745 white;
+}
+
+#okButton:hover {
+    background-color: deeppink;
+}
+
+#homeButton:hover {
+    background-color: #f7cedf;
+}
+
+/* Responsive design for mobile screens */
+@media (max-width: 768px) {
+    #page-wrapper {
+        background-size: contain; /* Adjusts to fit within smaller screens */
+    }
+
+    #mainButton {
+        padding: 0.5vw 8vw;
+        font-size: 1.5vw;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 480px) {
+    #page-wrapper {
+        background-size: 150%; /* Scales background for extra small screens */
+    }
+
+    #mainButton {
+        padding: 0.4vw 5vw;
+        font-size: 1.2vw;
+    }
+}
