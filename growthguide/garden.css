@@ -171,6 +171,10 @@ header button{
     grid-area: item1;
 }
 
+.left::-webkit-scrollbar {
+  width: 0;
+}
+
 .right {
   	/* background: white; */
  	flex-basis: 50%;
@@ -181,6 +185,9 @@ header button{
     grid-area: item2;
 }
 
+.right::-webkit-scrollbar {
+  width: 0;
+}
 
 .tabcontent{
     padding: 50px; 
