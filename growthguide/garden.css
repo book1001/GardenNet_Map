@@ -1,0 +1,677 @@
+@charset "UTF-8";
+*{
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+    padding-top: 200px;
+    transition: background-color 0.5s 0.5s;
+}
+
+
+h1{
+	font-family: "instrument-serif", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 180px;
+    text-align: center;
+    background: -webkit-linear-gradient(#00A95C, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+li{
+	font-family: "instrument-serif", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18x;
+    text-shadow: 0 0 5px white;
+}
+
+p{
+    font-family: "instrument-serif", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    text-shadow: 0 0 5px white;
+}
+h2{
+    font-family: "instrument-serif", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+}
+
+header h2{
+   font-family: "instrument-serif", sans-serif;
+   font-weight: 400;
+   font-style: italic;
+   font-size: 30px;
+}
+
+h3{
+    font-family: "instrument-serif", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10px;
+}
+
+h4{
+    font-family: "instrument-serif", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+}
+
+h5{
+    font-family: "instrument-serif", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 35px;
+    text-align: right;
+    padding-right: 25px;
+}
+
+a{
+    text-decoration: none;
+}
+
+header button{
+	border: none;
+	font: inherit;
+	border-radius: 0;
+	appearance: none;
+	cursor:se-resize;
+    position: fixed;
+    top: 32px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 200px; 
+    background-color: transparent;
+    z-index: 1000; 
+    text-align: center;
+    line-height: 200px;
+}
+
+.sub-title{
+  border: none;
+	font: inherit;
+	border-radius: 0;
+	appearance: none;
+	cursor:se-resize;
+    position: fixed;
+    top: 10px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 30px; 
+    background-color: transparent;
+    z-index: 1000; 
+    text-align: center;
+}
+
+
+.projects-menu li {
+	list-style: none;
+	
+}
+
+.projects-menu a {
+	text-decoration: none;
+	color: black;
+}
+
+.projects-menu button{
+	background-color: transparent;
+	border: none;
+	margin: 0;
+	padding: 0;
+	text-align: inherit;
+	font: inherit;
+	border-radius: 0;
+	appearance: none;
+	color: black;
+}
+
+.fixed{
+	overflow: hidden;
+  	position: fixed;
+    z-index: 2;
+}
+
+.wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index:1;
+  	/* display: flex; */
+	/* margin: 20px; */
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "item1 item2"
+      "item3 item3"; 
+}
+
+.left {
+  	/* background: white; */
+  	flex-basis: 50%;
+  	height: 100vh; 
+    padding-top: 35px;
+  	overflow: auto;
+    grid-area: item1;
+}
+
+.right {
+  	/* background: white; */
+ 	flex-basis: 50%;
+  	height: 100vh; 
+  	overflow: auto;
+	/*margin: 10px;*/
+	padding: 200px 10px 10px 10px; 
+    grid-area: item2;
+}
+
+
+.tabcontent{
+    padding: 50px; 
+    display: none;
+}
+
+.pink{
+    color: #FF48B0;
+}
+
+.violet{
+    color: #9D7AD2;
+}
+
+.orange{
+    color: #FF7477;
+}
+
+.corn{
+    color: #62A8E5;
+}
+
+.yellow{
+    color: #FEE700;
+}
+
+#About{
+    display: block;
+}
+
+
+
+.bloom-container {
+    position: relative;
+    width: 500px;  /* Large enough to fit big buttons in a circle */
+    height: 500px;
+    margin: 100px auto; /* Centers the menu container */
+}
+
+/* Styling for the central (main) button star shape*/
+/*.main-btn {
+  width: 100px;  
+  aspect-ratio: 1;
+  clip-path: polygon(50% 0,79% 90%,2% 35%,98% 35%,21% 90%);
+    background-color: #6fbf73; /* Main button color */
+    /*position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+*/
+.main-btn {
+  background: #6fbf73;
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  position: relative;
+  text-align: center;
+  transform: rotate(20deg) translate(-65%, -25%);
+  top: 50%; left: 50%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:grab;
+    transition: background-color 0.3s ease;
+}
+.main-btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+  background: #6fbf73;
+  transform: rotate(135deg);
+  background-color: inherit;
+}
+
+.main-btn:hover {
+    background-color: #52a95e;
+}
+
+.main-btn p{
+  z-index: 20;
+}
+
+
+
+/* Styling for the hidden buttons */
+.bloom-btn {
+    background-size: cover;
+    border: none;
+    background-color:transparent;
+    outline:none;
+    position: absolute;
+    top: 50%; left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);  /* Starts small */
+    transition: all 0.5s ease;
+    cursor:grab;
+}
+
+.bloom-btn:hover{
+  width:  100px;
+    height: 100px;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+
+  
+  .btn1 {
+    background-image: url('src/flower_icon_1.png');
+    width:  80px;
+    height: 80px;
+    background-size: cover; /* Ensures the image covers the whole button */
+    background-position: center; /* Centers the image */
+  }
+
+
+
+  .btn2 {
+    background-image: url('src/flower_icon_2.png');
+    width:  80px;
+    height: 80px;
+    background-size: cover; 
+    background-position: center; 
+  }
+
+  .btn3 {
+    background-image: url('src/flower_icon_3.png');
+    width:  80px;
+    height: 80px;
+    background-size: cover; 
+    background-position: center;
+  }
+
+  .btn4 {
+    background-image: url('src/flower_icon_4.png');
+    width:  80px;
+    height: 80px;
+    background-size: cover; 
+    background-position: center;
+  }
+
+  .btn5 {
+    background-image: url('src/flower_icon_5.png');
+    width:  80px;
+    height: 80px;
+    background-size: cover; 
+    background-position: center;
+  }
+
+  .btn6 {
+    background-image: url('src/flower_icon_6.png');
+    width:  80px;
+    height: 80px;
+    background-size: cover; 
+    background-position: center;
+  }
+
+  .btn7 {
+    background-image: url('src/flower_icon_7.png');
+    width:  80px;
+    height: 80px;
+    background-size: cover; 
+    background-position: center;
+  }
+
+  .btn8 {
+    background-image: url('src/flower_icon_8.png');
+    width:  80px;
+    height: 80px;
+    background-size: cover; 
+    background-position: center;
+  }
+
+  .btn9 {
+    background-image: url('src/flower_icon_9.png');
+    width:  75px;
+    height: 75px;
+    background-size: cover; 
+    background-position: center;
+  }
+
+  .btn10 {
+    background-image: url('src/flower_icon_10.png');
+    width:  80px;
+    height: 80px;
+    background-size: cover; 
+    background-position: center;
+  }
+
+  .btn11 {
+    background-image: url('src/flower_icon_11.png');
+    width:  85px;
+    height: 85px;
+    background-size: cover; 
+    background-position: center;
+  }
+
+  .btn12 {
+    background-image: url('src/flower_icon_12.png');
+    width:  80px;
+    height: 80px;
+    background-size: cover; 
+    background-position: center;
+  }
+
+  .btn13 {
+    background-image: url('src/flower_icon_13.png');
+    width:  80px;
+    height: 80px;
+    background-size: cover; 
+    background-position: center;
+  }
+
+  .btn14 {
+    background-image: url('src/flower_icon_14.png');
+    width:  80px;
+    height: 80px;
+    background-size: cover; 
+    background-position: center;
+  }
+
+  .btn15 {
+    background-image: url('src/flower_icon_15.png');
+    width:  80px;
+    height: 80px;
+    background-size: cover; 
+    background-position: center;
+  }
+
+
+
+/* Show the buttons in a flower formation on hover */
+.bloom-container:hover .bloom-btn {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);  /* Grows on hover */
+}
+
+
+.bloom-btn:nth-child(2)  { top: 50%; left: 99%; transition-delay: 0s;}   
+.bloom-btn:nth-child(3)  { top: 68%; left: 93%; transition-delay: 0.1s;}    
+.bloom-btn:nth-child(4)  { top: 82%; left: 83%; transition-delay: 0.15s;}    
+.bloom-btn:nth-child(5)  { top: 93%; left: 66%; transition-delay: 0.2;}    
+/*.bloom-btn:nth-child(5)  { top: 100%; left: 50%; transition-delay: 0.25s;} */  
+.bloom-btn:nth-child(6)  { top: 93%; left: 34%; transition-delay: 0.25s;}    
+.bloom-btn:nth-child(7)  { top: 82%; left: 17%; transition-delay: 0.3s;}    
+.bloom-btn:nth-child(8)  { top: 68%; left: 7%; transition-delay: 0.35s;}     
+.bloom-btn:nth-child(9) { top: 50%; left: 1%; transition-delay: 0.4s;}     
+.bloom-btn:nth-child(10) { top: 34%; left: 5%; transition-delay: 0.45s;}     
+.bloom-btn:nth-child(11) { top: 20%; left: 16%; transition-delay: 0.5s;}    
+.bloom-btn:nth-child(12) { top: 7%; left: 30%; transition-delay: 0.55s;}     
+.bloom-btn:nth-child(13) { top: 3%; left: 50%; transition-delay: 0.6s;}     
+.bloom-btn:nth-child(14) { top: 6%; left: 68%; transition-delay: 0.65s;}     
+.bloom-btn:nth-child(15) { top: 20%; left: 84%; transition-delay: 0.7s;}
+.bloom-btn:nth-child(16) { top: 34%; left: 95%; transition-delay: 0.75s;}  
+
+.bloom-btn:nth-child(2):hover  { top: 50%; left: 99%; transition-delay: 0s;}   
+.bloom-btn:nth-child(3):hover  { top: 68%; left: 93%; transition-delay: 0.1s;}    
+.bloom-btn:nth-child(4):hover  { top: 82%; left: 83%; transition-delay: 0.1s;}    
+.bloom-btn:nth-child(5):hover  { top: 93%; left: 66%; transition-delay: 0.1s;}    
+/*.bloom-btn:nth-child(5)  { top: 100%; left: 50%; transition-delay: 0.25s;} */  
+.bloom-btn:nth-child(6):hover  { top: 93%; left: 34%; transition-delay: 0.1s;}    
+.bloom-btn:nth-child(7):hover { top: 82%; left: 17%; transition-delay: 0.1s;}    
+.bloom-btn:nth-child(8):hover  { top: 68%; left: 7%; transition-delay: 0.1s;}     
+.bloom-btn:nth-child(9):hover { top: 50%; left: 1%; transition-delay: 0.1s;}     
+.bloom-btn:nth-child(10):hover { top: 34%; left: 5%; transition-delay: 0.1s;}     
+.bloom-btn:nth-child(11):hover { top: 20%; left: 16%; transition-delay: 0.1s;}    
+.bloom-btn:nth-child(12):hover { top: 7%; left: 30%; transition-delay: 0.1s;}     
+.bloom-btn:nth-child(13):hover { top: 3%; left: 50%; transition-delay: 0.1s;}     
+.bloom-btn:nth-child(14):hover { top: 6%; left: 68%; transition-delay: 0.1s;}     
+.bloom-btn:nth-child(15):hover { top: 20%; left: 84%; transition-delay: 0.1s;}
+.bloom-btn:nth-child(16):hover { top: 34%; left: 95%; transition-delay: 0.1s;}  
+
+footer {
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 50px;
+  background: linear-gradient(white, #be7333);
+  transition: background-color 0.5s 0.5s;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 210px;
+}
+
+
+footer h3{
+  padding-top: 60px;
+}
+
+ul {
+  list-style: none;
+  padding-inline-start: 20px;
+  font-size: 30px;
+}
+
+li{
+  font-family: "instrument-serif", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    text-shadow: 0 0 3px white;
+}
+
+#Question1 li:before {
+  content:'A:';
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#FF48B0;
+}
+
+#Question2 li:before {
+  content:'A:';
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#9D7AD2;
+}
+
+#Question3 .best:before {
+  content:'BEST:';
+  margin-left: -50px;
+  margin-right: 8px;
+  color:#FF7477;
+}
+
+#Question3 .worst:before {
+  content:'WORST:';
+  margin-left: -65px;
+  margin-right: 8px;
+  color:#FF7477;
+}
+
+#Question4 li:before {
+  content:'A:';
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#62A8E5;
+}
+
+#Question5 li:before {
+  content:'A:';
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#FF48B0;
+}
+
+#Question6 li:before {
+  content:'A:';
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#9D7AD2;
+}
+
+#Question7 li:before {
+  content:'A:';
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#FF48B0;
+}
+
+#Question8 li:before {
+  content:'A:';
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#FEE700;
+}
+
+#Question9 li:before {
+  content:'A:';
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#9D7AD2;
+}
+
+#Question10 li:before {
+  content:'A:';
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#62A8E5;
+}
+
+#Question11 li:before {
+  content:'A:';
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#FEE700;
+}
+
+#Question12 li:before {
+  content:'A:';
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#62A8E5;
+}
+
+#Question13 li:before {
+  content:'A:';
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#FEE700;
+}
+
+#Question14 li:before {
+  content:'A:';
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#FF7477;
+}
+
+#Question15 li:before {
+  content:'A:';
+  margin-left: -20px;
+  margin-right: 8px;
+  color:#FF7477;
+}
+
+#Question1 h5 a .pink:hover {
+  color: #62A8E5; 
+}
+
+#Question2 h5 a .violet:hover {
+  color: #FF48B0;
+}
+
+#Question3 h5 a .orange:hover {
+  color: #FEE700;
+}
+
+#Question4 h5 a .corn:hover {
+  color: #FF7477;
+}
+
+#Question5 h5 .pink:hover {
+  color: #9D7AD2;
+}
+
+#Question6 h5 a .violet:hover {
+  color: #FEE700;
+}
+
+#Question7 h5 a .pink:hover {
+  color: #FF7477;
+}
+
+#Question8 h5 a .yellow:hover {
+  color: #62A8E5;
+}
+
+#Question9 h5 a .violet:hover {
+  color: #FF48B0;
+}
+
+#Question10 h5 .corn:hover {
+  color: #FEE700;
+}
+
+#Question11 h5 a .yellow:hover {
+  color: #FF7477;
+}
+
+#Question12 h5 a .corn:hover {
+  color: #FF48B0;
+}
+
+#Question13 h5 a .yellow:hover {
+  color: #9D7AD2;
+}
+
+#Question14 h5 a .orange:hover {
+  color: #62A8E5;
+}
+
+#Question15 h5 a .orange:hover {
+  color: #FEE700;
+}
+
+@media only screen and (max-width: 1199px) {
+  .wrap { display: none; }
+      .smallscreen { display: block; }
+  }
+@media only screen and (min-width: 1200px) {
+      .smallscreen { display: none; }
+  }
+
+.small-screen-warning{
+  text-align: center;
+  padding-top: 250px;
+}

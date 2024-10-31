@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WikiGD_FINAL.PDF</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="WikiGD_final.css">
+</head>
+<body>
+<div id="page-wrapper">
+    <button id="okButton">X</button>
+    <button id="homeButton" class="hidden">X</button> <!-- Home button, initially hidden -->
+
+    <button id="mainButton" class="hidden">Search WikiGD_final</button>
+    <div id="images"></div>
+
+    <div id="buttonContainer" class="hidden">
+        <button class="additional-btn" data-image2="src/Abby.png" data-image1="src/abigail2.png">What did you know at 16 that you don't know now?</button>
+        <button class="additional-btn" data-image2="src/Andrea.png" data-image1="src/andrea2.png">How do you motivate yourself to expand your design knowledge?</button>
+        <button class="additional-btn" data-image2="src/Hailey.png" data-image1="src/Hailey2.png">How are you feeling about thesis/senior year design work?</button>
+        <button class="additional-btn" data-image2="src/Hayley.png" data-image1="src/hayley2.png">What film or film scene inspired you solely through visuals?</button>
+        <button class="additional-btn" data-image2="src/Katelyn.png" data-image1="src/katelyn2.png">What brings you peace?</button>
+        <button class="additional-btn" data-image2="src/Leila.png" data-image1="src/leila2.png">What one project are you most proud of and why?</button>
+        <button class="additional-btn" data-image2="src/Lilia.png" data-image1="src/lilia2.png">What are your design preferences?</button>
+        <button class="additional-btn" data-image2="src/Luci.png" data-image1="src/luci2.png">When do you decide your project is finished? Is it ever finished?</button>
+        <button class="additional-btn" data-image2="src/Ruxian.png" data-image1="src/rashina2.png">What can help you calm down, stop being emotional?</button>
+        <button class="additional-btn" data-image2="src/Sheryl.png" data-image1="src/sheryl2.png">How have your other interests informed your design?</button>
+        <button class="additional-btn" data-image2="src/Shi Shi.png" data-image1="src/shi shi2.png">If graphic design was a fruit or vegetable, what would it be and why?</button>
+        <button class="additional-btn" data-image2="src/Simone.png" data-image1="src/simone2.png">What song...?</button>
+        <button class="additional-btn" data-image2="src/Soph Ang.png" data-image1="src/sophang2.png">How can I develop a process?</button>
+        <button class="additional-btn" data-image2="src/Vanessa.png" data-image1="src/vanessa2.png">What color do you use the most throughout your design work?</button>
+        <button class="additional-btn" data-image2="src/Yeji.png" data-image1="src/yeji2.png">How can I use my design knowledge in the real world? What if I didn't?</button>
+        <div id="imageContainer" style="display: none; text-align: center;"></div>
+    </div>
+</div>
+
+<!-- Modal for image popup -->
+<!-- Modal 1 -->
+<div id="imageModal1" class="modal">
+    <span class="close" id="closeModal1">&times;</span>
+    <div class="modal-content">
+        <img id="modalImage1" alt="Popup Image 1">
+    </div>
+</div>
+
+<!-- Modal 2 -->
+<div id="imageModal2" class="modal">
+    <span class="close" id="closeModal2">&times;</span>
+    <div class="modal-content">
+        <img id="modalImage2" alt="Popup Image 2">
+    </div>
+</div>
+
+<script src="WikiGD_final.js"></script>
+</body>
+</html>
