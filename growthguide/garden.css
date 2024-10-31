@@ -9,6 +9,10 @@ body {
     transition: background-color 0.5s 0.5s;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 
 h1{
 	font-family: "instrument-serif", sans-serif;
