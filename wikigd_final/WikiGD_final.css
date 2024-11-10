@@ -13,36 +13,34 @@ body {
 
 /* Page wrapper styling */
 #page-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 97vh;
-    margin: 0;
-    background: url('src/bgv5.png') center/cover no-repeat;
+    position: relative;
+    width: 100vw;                /* Full viewport width */
+    height: 100vh;               /* Full viewport height */
+    background: url('src/bgv5.png') no-repeat center/cover;
+    background-size: contain;    /* Ensure the entire image fits within the viewport */
     background-attachment: fixed;
+    overflow: hidden;            /* Prevents overflow of content */
 }
 
-/* Main button styling */
+/* Main button styling: fixed to a specific position */
 #mainButton {
-    display: none;
-    padding: 0.5vw 10vw; /* Scales padding horizontally */
-    font-size: 1.5vw; /* Scales font size */
+    position: fixed;                 /* Fixed to the viewport */
+    top: 16%;                        /* Position higher up */
+    left: 50%;                       /* Center horizontally */
+    transform: translate(-50%, -50%); /* Centers the button exactly at the specified point */
+    padding: 1em 2em;
+    font-size: 1.5rem;
     cursor: pointer;
-    background-color: white;
-    color: #28a745;
-    border: none;
-    border-radius: 0.5vw;
-    position: fixed;
-    top: 13.15%;
-    left: 53%;
-    transform: translateX(-50%);
-    z-index: 10;
-    font-weight: 700;
-    transition: background-color 0.3s;
+    background: transparent;         /* Transparent background */
+    color: #28a745;                  /* The color of the 'X' text in the middle */
+    border: none;                    /* No border */
+    font-weight: 700;                /* Make the text bold to be more visible */
+    z-index: 5;                      /* Ensure the button stays above other content */
+    transition: color 0.3s;          /* Smooth transition for hover */
 }
 
 #mainButton:hover {
-    background-color: hotpink;
+    color: hotpink;                  /* Change text color on hover */
 }
 
 /* Button container styling for additional buttons */
@@ -116,8 +114,15 @@ body {
     align-items: center;
 }
 
+.modal-content img {
+    /*max-width: 100%;                !* Scale images within modal *!*/
+    max-height: 100%;               /* Prevent overflow */
+    object-fit: contain;
+    border-radius: 0.5rem;          /* Rounded corners for images */
+}
+
 /* Modal image styling */
-#modalImage2{
+#modalImage2 {
     max-height: 70vh;
 }
 
@@ -126,112 +131,156 @@ body {
     object-fit: contain;
 }
 
-/* Close button styling */
+/* Close button styling: transparent with no 'X' and larger size */
 #closeModal2 {
-    position: fixed; /* Keep it fixed relative to the viewport */
-    top: -4vh; /* Adjust this value to move it further up */
-    right: -8vw; /* Adjust this value to move it further right */
-    font-size: 1.5vw;
-    color: deeppink;
-    cursor: pointer;
-    width: 1.5vw;
-    height: 1.5vw;
-    background-color: #d0e9d5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0.2vw solid;
-    border-color: white deeppink deeppink white;
+    position: absolute;              /* Positioning within modal */
+    top: -3vw;                        /* Adjust to position the close button as needed */
+    right: -8.5vw;                      /* Adjust to position the close button as needed */
+    width: 3rem;                     /* Set width to make the button larger */
+    height: 3rem;                    /* Set height to make the button larger */
+    cursor: pointer;                 /* Show pointer to indicate it’s clickable */
+    background: rgba(255, 255, 255, 0.2); /* Sheer white background (20% opacity) */
+    border: none;                    /* No border */
+    border-radius: 0.5rem;           /* Rounded edges for a softer look */
+    z-index: 100;                    /* Keep the button above other content */
+    transition: background-color 0.3s, transform 0.3s;  /* Smooth transition for hover */
 }
 
 #closeModal1 {
-    position: absolute;
-    top: 2vw;
-    right: 1.3vw;
-    font-size: 1.5vw; /* Scales font size */
-    color: deeppink;
-    cursor: pointer;
-    width: 1.5vw;
-    height: 1.5vw;
-    background-color: #d0e9d5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0.2vw solid;
-    border-color: white deeppink deeppink white;
+    position: absolute;              /* Positioning within modal */
+    top: 1.5vw;                        /* Adjust to position the close button as needed */
+    right: 0.5vw;                      /* Adjust to position the close button as needed */
+    width: 3rem;                     /* Set width to make the button larger */
+    height: 3rem;                    /* Set height to make the button larger */
+    cursor: pointer;                 /* Show pointer to indicate it’s clickable */
+    background: rgba(255, 255, 255, 0.2); /* Sheer white background (20% opacity) */
+    border: none;                    /* No border */
+    border-radius: 0.5rem;           /* Rounded edges for a softer look */
+    z-index: 100;                    /* Keep the button above other content */
+    transition: background-color 0.3s, transform 0.3s;  /* Smooth transition for hover */
 }
 
+/* Hover effect for close buttons */
 .close:hover {
-    background-color: white;
-    color: #28a745;
-    transform: scale(1.1);
+    background-color: rgba(255, 105, 180, 0.3);  /* Add a subtle pink background on hover */
+    transform: scale(1.1);                       /* Slightly enlarge on hover for effect */
 }
 
-/* Main button styling */
-#okButton {
+/* Main button styling for other buttons */
+#okButton, #homeButton {
     position: absolute;
-    top: 10.8vw;
-    right: 28.9vw;
-    font-size: 1.5vw; /* Scales font size */
-    color: #28a745;
+    width: 3rem;                     /* Set width to make the button larger */
+    height: 3rem;                    /* Set height to make the button larger */
     cursor: pointer;
-    width: 1.5vw;
-    height: 1.5vw;
-    background-color: #f7cedf;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0.2vw solid;
-    border-color: white #28a745 #28a745 white;
+    background: rgba(255, 255, 255, 0.2); /* Sheer white background (20% opacity) */
+    border: none;                    /* No border */
+    border-radius: 0.5rem;           /* Rounded edges for a softer look */
+    transition: background-color 0.3s, transform 0.3s;  /* Smooth transition for hover */
+}
+
+#okButton {
+    top: 10.5vw;
+    right: 28.7vw;
 }
 
 #homeButton {
     display: none;
-    position: absolute;
-    top: 3.8vw;
-    right: 17.5vw;
-    font-size: 2vw; /* Scales font size */
-    color: deeppink;
-    cursor: pointer;
-    width: 2vw;
-    height: 2vw;
-    background-color: #d0e9d5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0.2vw solid;
-    border-color: white #28a745 #28a745 white;
+    top: 2.9vw;
+    right: 17.6vw;
 }
 
-#okButton:hover {
-    background-color: deeppink;
-}
-
-#homeButton:hover {
-    background-color: #f7cedf;
+/* Hover effect for ok and home buttons */
+#okButton:hover, #homeButton:hover {
+    background-color: rgba(255, 105, 180, 0.3);  /* Add a subtle pink background on hover */
+    transform: scale(1.1);                       /* Slightly enlarge on hover for effect */
 }
 
 /* Responsive design for mobile screens */
 @media (max-width: 768px) {
     #page-wrapper {
-        background-size: contain; /* Adjusts to fit within smaller screens */
+        background-size: contain;          /* Fills the container without leaving empty space */
+        background-position: center;     /* Keeps it centered for better visual layout */
     }
 
     #mainButton {
-        padding: 0.5vw 8vw;
-        font-size: 1.5vw;
+        top: 40%;                /* Adjust these values for better placement on smaller screens */
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
+        width: 2.5rem;           /* Smaller size for mobile */
+        height: 2.5rem;          /* Smaller size for mobile */
     }
-}
 
-@media (max-width: 480px) {
+    .close {
+        width: 2.5rem;           /* Smaller size for mobile */
+        height: 2.5rem;          /* Smaller size for mobile */
+    }
+    #buttonContainer {
+        top: 33vw;
+        left: 53%;
+    }
+
     #page-wrapper {
-        background-size: 150%; /* Scales background for extra small screens */
+        width: 100vw;
+        height: 100vh;
     }
 
     #mainButton {
-        padding: 0.4vw 5vw;
-        font-size: 1.2vw;
+        position: fixed;                 /* Fixed to the viewport */
+        top: 30.5%;                        /* Position higher up */
+        left: 47%;                       /* Center horizontally */
+        transform: translate(-50%, -50%); /* Centers the button exactly at the specified point */
+        padding: 0.7em 0.5em;
+        font-size: 1.4rem;
+        cursor: pointer;
+        background: transparent;         /* Transparent background */
+        color: #28a745;                  /* The color of the 'X' text in the middle */
+        border: none;                    /* No border */
+        font-weight: 700;                /* Make the text bold to be more visible */
+        z-index: 5;                      /* Ensure the button stays above other content */
+        transition: color 0.3s;
+        white-space: nowrap;/* Smooth transition for hover */
+    }
+
+    #okButton {
+        top: 28.5vw;
+        right: 24vw;
+    }
+
+    #homeButton {
+        display: none;
+        top: 24.5vw;
+        right: 18.2vw;
+    }
+
+    #modalImage2 {
+        max-height: 50vh;
+    }
+
+    #modalImage1 {
+        max-height: 40vh;
+        object-fit: contain;
+    }
+    #imageModal1 {
+        left: 10vw; /* Positions Modal 1 */
+        z-index: 101;
+    }
+
+    #imageModal2 {
+        right: 30vw; /* Positions Modal 2 */
+        z-index: 100;
+    }
+
+    #closeModal2 {
+        top: 5.3vw;                        /* Adjust to position the close button as needed */
+        right: -22vw;                      /* Adjust to position the close button as needed */
+        width: 3rem;                     /* Set width to make the button larger */
+        height: 3rem;                    /* Set height to make the button larger */
+    }
+
+    #closeModal1 {
+        top: 11.9vw;                        /* Adjust to position the close button as needed */
+        right: -7.2vw;                      /* Adjust to position the close button as needed */
+        width: 3rem;                     /* Set width to make the button larger */
+        height: 3rem;                    /* Set height to make the button larger */
     }
 }
